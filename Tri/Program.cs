@@ -13,24 +13,38 @@ namespace ConsoleApp1
         {
             Console.WriteLine();
 
-            //Array.ForEach(myNum, Console.WriteLine);
             Console.WriteLine($"{string.Join(", ", myNum)}");
 
-            //BubbleSort(myNum);
+            BubbleSort();
 
+            Console.WriteLine($"{string.Join(", ", myNum)}");
         }
-        static void BubbleSort(int[] array)
+        static void BubbleSort()
         {
-            for (int i = 0; i <= array.Length - 1; i++)
-            {
-                if (array[i] > array[i + 1])
+            while (isSorted() == false) {
+                for (int i = 0; i < myNum.Length - 1; i++)
                 {
-                    int temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
+                    if (myNum[i] > myNum[i + 1])
+                    {
+                        int temp = myNum[i];
+                        myNum[i] = myNum[i + 1];
+                        myNum[i + 1] = temp;
+                    }
                 }
             }
         }
+        static bool isSorted() 
+        {
+            for (int i = 0; i < myNum.Length - 1; i++) 
+            {
+                if (myNum[i] > myNum[i+1])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         static void InsertionSort(int[] array)
         {
             
