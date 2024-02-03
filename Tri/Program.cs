@@ -45,9 +45,21 @@ namespace ConsoleApp1
             return true;
         }
 
-        static void InsertionSort(int[] array)
+        static void InsertionSort()
         {
-            
+            for (int i = 0; i < myNum.Length - 1; i++) 
+            {
+                if (myNum[i] > myNum[i + 1]) 
+                {
+                    int temp = myNum[i];
+                    myNum[i] = myNum[i + 1];
+                    myNum[i + 1] = temp;
+                }
+                else
+                {
+                    myNum[i - 1] = myNum[i - 2]; 
+                }
+            }
         }
     }
 }
