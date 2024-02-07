@@ -52,7 +52,7 @@ namespace ConsoleApp1
             {
                 currentValue = arr[i];
                 currentIndex = i;
-                while (currentIndex > 0 & arr[currentIndex - 1] > currentValue) 
+                while (currentIndex > 0 && arr[currentIndex - 1] > currentValue) 
                 {
                     arr[currentIndex] = arr[currentIndex - 1];
                     currentIndex--;
