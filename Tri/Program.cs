@@ -15,7 +15,7 @@ namespace ConsoleApp1
 
             Console.WriteLine($"{string.Join(", ", myNum)}");
 
-            BubbleSort();
+            InsertionSort(myNum);
 
             Console.WriteLine($"{string.Join(", ", myNum)}");
         }
@@ -45,20 +45,19 @@ namespace ConsoleApp1
             return true;
         }
 
-        static void InsertionSort()
+        static void InsertionSort(int[] arr)
         {
-            for (int i = 0; i < myNum.Length - 1; i++) 
+            int currentIndex, currentValue;
+            for (int i = 0; i < arr.Length; i++) 
             {
-                if (myNum[i] > myNum[i + 1]) 
+                currentValue = arr[i];
+                currentIndex = i;
+                while (currentIndex > 0 & arr[currentIndex - 1] > currentValue) 
                 {
-                    int temp = myNum[i];
-                    myNum[i] = myNum[i + 1];
-                    myNum[i + 1] = temp;
+                    arr[currentIndex] = arr[currentIndex - 1];
+                    currentIndex--;
                 }
-                else
-                {
-                    myNum[i - 1] = myNum[i - 2]; 
-                }
+                arr[currentIndex] = currentValue;
             }
         }
     }
